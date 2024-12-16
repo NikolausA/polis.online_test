@@ -1,22 +1,20 @@
+import { Routes, Route } from "react-router-dom";
+import { UserProvider } from "./UseContext";
+import { Header } from "./components/header/header";
+import { Authorization, Registration, Main } from "./pages";
 import "./App.css";
-import { useState, useEffect } from "react";
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    fetch("http://localhost:/api/test")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message))
-      .catch((error) => {
-        console.error("Error connecting to the backend:", error);
-      });
-  }, []);
-
   return (
     <div className="App">
-      <h1>React frontend</h1>
-      <div>Message from backend: {message}</div>
+      <UserProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/login" element={<Authorization />} />
+          <Route path="/register" element={<Registration />} />
+        </Routes>
+      </UserProvider>
     </div>
   );
 }

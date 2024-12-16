@@ -1,0 +1,78 @@
+.container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  font-family: inherit;
+}
+
+.form {
+  width: 350px;
+  margin-top: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 0 -2px 17px #000;
+}
+
+.title {
+  margin: 0 0 15px 0;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.input {
+  display: block;
+  padding: 10px;
+  height: 40px;
+  width: 100%;
+  background-color: lightgray;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 300;
+}
+.input:focus {
+  background-color: #fff;
+  border: 1px solid green;
+  outline: none;
+}
+
+.button {
+  margin-top: 10px;
+  background-color: #2f63ca;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.button:disabled {
+  background-color: lightgray;
+  cursor: none;
+}
+
+.errorMessage {
+  margin: 0;
+  padding: 0;
+  display: block;
+  font-size: 0.7rem;
+  color: red;
+  height: 20px;
+  margin-bottom: 4px;
+  visibility: hidden;
+}
+
+.errorMessage:empty {
+  visibility: hidden;
+}
+
+.errorMessage:not(:empty) {
+  visibility: visible;
+}
